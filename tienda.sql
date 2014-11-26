@@ -1,12 +1,12 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         5.5.36 - MySQL Community Server (GPL)
+-- Versión del servidor:         5.6.19 - MySQL Community Server (GPL)
 -- SO del servidor:              Win64
--- HeidiSQL Versión:             9.1.0.4867
+-- HeidiSQL Versión:             8.3.0.4694
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
@@ -20,8 +20,9 @@ CREATE TABLE IF NOT EXISTS `articulo` (
   `idArticulo` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nombreArticulo` varchar(50) DEFAULT NULL,
   `descripcionArticulo` text,
-  `stockArticulo` int(11) DEFAULT NULL,
   `precioArticulo` decimal(10,0) unsigned DEFAULT NULL,
+  `idCategoria` int(10) unsigned DEFAULT NULL,
+  `idPlataforma` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`idArticulo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -30,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `articulo` (
 
 -- Volcando estructura para tabla tienda.categoria
 CREATE TABLE IF NOT EXISTS `categoria` (
-  `idCategoria` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `idCategoria` int(11) NOT NULL AUTO_INCREMENT,
   `nombreCategoria` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idCategoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -40,8 +41,14 @@ CREATE TABLE IF NOT EXISTS `categoria` (
 
 -- Volcando estructura para tabla tienda.cliente
 CREATE TABLE IF NOT EXISTS `cliente` (
-  `idCliente` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `nombreCliente` varchar(50) DEFAULT NULL,
+  `idCliente` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreCliente` varchar(50) NOT NULL,
+  `dniCliente` varchar(50) DEFAULT NULL,
+  `emailCliente` varchar(50) DEFAULT NULL,
+  `apellido1Cliente` varchar(50) DEFAULT NULL,
+  `apellido2Cliente` varchar(50) DEFAULT NULL,
+  `loginCliente` varchar(50) DEFAULT NULL,
+  `passwordCliente` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idCliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -54,6 +61,7 @@ CREATE TABLE IF NOT EXISTS `detallepedido` (
   `idArticulo` int(11) unsigned DEFAULT NULL,
   `cantidadArticulo` int(11) DEFAULT NULL,
   `precioArticulo` decimal(10,0) unsigned DEFAULT NULL,
+  `idPedido` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`idDetallePedido`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -88,8 +96,6 @@ CREATE TABLE IF NOT EXISTS `pago` (
 CREATE TABLE IF NOT EXISTS `pedido` (
   `idPedido` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `fechaPedido` date DEFAULT NULL,
-  `estadoPedido` varchar(50) DEFAULT NULL,
-  `comentarioPedido` text,
   `idCliente` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`idPedido`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -99,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `pedido` (
 
 -- Volcando estructura para tabla tienda.plataforma
 CREATE TABLE IF NOT EXISTS `plataforma` (
-  `idPlataforma` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `idPlataforma` int(11) NOT NULL AUTO_INCREMENT,
   `nombrePlataforma` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idPlataforma`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -109,19 +115,9 @@ CREATE TABLE IF NOT EXISTS `plataforma` (
 
 -- Volcando estructura para tabla tienda.seccion
 CREATE TABLE IF NOT EXISTS `seccion` (
-  `idSeccion` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `idSeccion` int(11) NOT NULL AUTO_INCREMENT,
   `nombreSeccion` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idSeccion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- La exportación de datos fue deseleccionada.
-
-
--- Volcando estructura para tabla tienda.usuario
-CREATE TABLE IF NOT EXISTS `usuario` (
-  `usuario` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  PRIMARY KEY (`usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- La exportación de datos fue deseleccionada.
