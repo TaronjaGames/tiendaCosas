@@ -1,12 +1,12 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         5.6.19 - MySQL Community Server (GPL)
+-- Versión del servidor:         5.5.36 - MySQL Community Server (GPL)
 -- SO del servidor:              Win64
--- HeidiSQL Versión:             8.3.0.4694
+-- HeidiSQL Versión:             9.1.0.4867
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `noticia` (
   PRIMARY KEY (`idNoticia`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla tienda.noticia: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla tienda.noticia: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `noticia` DISABLE KEYS */;
 INSERT INTO `noticia` (`idNoticia`, `tituloNoticia`, `textoNoticia`, `imagenNoticia`) VALUES
 	(1, 'Tierra Media : Shadow Of Mordor', 'Una nueva aventura de acción ambientada en el universo de El Señor de los Anillos en la que tomaremos el control de Talion, un misterioso guerrero que se adentra en', 'img/noticias/ShadowOfMordor.jpg'),
@@ -127,10 +127,16 @@ CREATE TABLE IF NOT EXISTS `plataforma` (
   `idPlataforma` int(11) NOT NULL AUTO_INCREMENT,
   `nombrePlataforma` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idPlataforma`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla tienda.plataforma: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla tienda.plataforma: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `plataforma` DISABLE KEYS */;
+INSERT INTO `plataforma` (`idPlataforma`, `nombrePlataforma`) VALUES
+	(1, 'PS4'),
+	(2, 'XONE'),
+	(3, 'PC'),
+	(4, 'WII U'),
+	(5, '3DS');
 /*!40000 ALTER TABLE `plataforma` ENABLE KEYS */;
 
 
@@ -139,10 +145,18 @@ CREATE TABLE IF NOT EXISTS `seccion` (
   `idSeccion` int(11) NOT NULL AUTO_INCREMENT,
   `nombreSeccion` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idSeccion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla tienda.seccion: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla tienda.seccion: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `seccion` DISABLE KEYS */;
+INSERT INTO `seccion` (`idSeccion`, `nombreSeccion`) VALUES
+	(1, 'Inicio'),
+	(2, 'Noticias'),
+	(3, 'Ranking'),
+	(4, 'Consolas'),
+	(5, 'Videojuegos'),
+	(6, 'Ofertas'),
+	(7, 'Hoy hablamos de...');
 /*!40000 ALTER TABLE `seccion` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
