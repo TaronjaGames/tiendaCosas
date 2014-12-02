@@ -26,7 +26,9 @@ CREATE TABLE IF NOT EXISTS `articulo` (
   PRIMARY KEY (`idArticulo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla tienda.articulo: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `articulo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `articulo` ENABLE KEYS */;
 
 
 -- Volcando estructura para tabla tienda.categoria
@@ -36,7 +38,9 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   PRIMARY KEY (`idCategoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla tienda.categoria: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
+/*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 
 
 -- Volcando estructura para tabla tienda.cliente
@@ -52,7 +56,9 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   PRIMARY KEY (`idCliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla tienda.cliente: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 
 
 -- Volcando estructura para tabla tienda.detallepedido
@@ -65,7 +71,9 @@ CREATE TABLE IF NOT EXISTS `detallepedido` (
   PRIMARY KEY (`idDetallePedido`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla tienda.detallepedido: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `detallepedido` DISABLE KEYS */;
+/*!40000 ALTER TABLE `detallepedido` ENABLE KEYS */;
 
 
 -- Volcando estructura para tabla tienda.noticia
@@ -75,9 +83,16 @@ CREATE TABLE IF NOT EXISTS `noticia` (
   `textoNoticia` text,
   `imagenNoticia` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idNoticia`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla tienda.noticia: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `noticia` DISABLE KEYS */;
+INSERT INTO `noticia` (`idNoticia`, `tituloNoticia`, `textoNoticia`, `imagenNoticia`) VALUES
+	(1, 'Tierra Media : Shadow Of Mordor', 'Una nueva aventura de acción ambientada en el universo de El Señor de los Anillos en la que tomaremos el control de Talion, un misterioso guerrero que se adentra en', 'img/noticias/ShadowOfMordor.jpg'),
+	(2, 'Minecraft tiene nuevo dueño', 'La empresa creadora del videojuego Minecraft, la sueca Mojang, ha anunciado que ha sido adquirida por el gigante estadounidense Microsoft por 2.500 millones de dólares (1.935.000.000 euros aproximadamente).Los fundadores de la empresa, grandes ganadores en esta operación, han anunciado su salida de la misma en la página web de Mojang. La operación aún está pendiente de las condiciones habituales de cierre y del análisis de los organismos reguladores, por lo que la compañía confía en que se pueda cerrar a finales de este año. Asimismo, Microsoft estima que la operación empezará a ser rentable a partir del próximo año fiscal.', 'img/noticias/minecraft.jpg'),
+	(3, 'Destiny', 'Un videojuego de acción y aventura donde los usuarios crean y hacen evolucionar a su personaje para convertirse en leyendas de su propia historia por salvar a la Tierra.', 'img/noticias/Destiny.jpg'),
+	(4, 'Alien Isolation', 'Creative Assembly regresa a las raíces de la saga Alien en una entrega que recupera la esencia de la primera película, dirigida por Ridley Scott. Un survival horror en primera persona en el que controlamos a Amanda Ripley quince años después de la desaparición de su madre.', 'img/noticias/alien.jpg');
+/*!40000 ALTER TABLE `noticia` ENABLE KEYS */;
 
 
 -- Volcando estructura para tabla tienda.pago
@@ -89,7 +104,9 @@ CREATE TABLE IF NOT EXISTS `pago` (
   PRIMARY KEY (`idPago`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla tienda.pago: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `pago` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pago` ENABLE KEYS */;
 
 
 -- Volcando estructura para tabla tienda.pedido
@@ -100,7 +117,9 @@ CREATE TABLE IF NOT EXISTS `pedido` (
   PRIMARY KEY (`idPedido`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla tienda.pedido: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `pedido` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
 
 
 -- Volcando estructura para tabla tienda.plataforma
@@ -110,7 +129,9 @@ CREATE TABLE IF NOT EXISTS `plataforma` (
   PRIMARY KEY (`idPlataforma`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla tienda.plataforma: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `plataforma` DISABLE KEYS */;
+/*!40000 ALTER TABLE `plataforma` ENABLE KEYS */;
 
 
 -- Volcando estructura para tabla tienda.seccion
@@ -120,7 +141,9 @@ CREATE TABLE IF NOT EXISTS `seccion` (
   PRIMARY KEY (`idSeccion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla tienda.seccion: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `seccion` DISABLE KEYS */;
+/*!40000 ALTER TABLE `seccion` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
